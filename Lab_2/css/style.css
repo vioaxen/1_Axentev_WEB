@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: "Raleway", sans-serif;
+    background: #0C0B0E;
+}
+
+.container {
+    max-width: 1500px;
+    padding: 0 50px;
+    margin: 0 auto;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Header */
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    font-size: 1.2rem;
+}
+
+.nav-list a {
+    color: #FFFFFF;
+}
+
+.buy {
+    border: 1px solid #EAFC52;
+    padding: 10px 30px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+}
+
+.buy a {
+    color: #EAFC52;
+}
+
+/* About */
+#about {
+    
+    padding: 100px 0;
+    color: #EAFC52;
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.head h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+
+}
+
+.head h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+}
+
+.head h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.head h4 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+
+.buy_btn {
+    color: #0C0B0E;
+    padding: 10px 30px;
+    border-radius: 15px;
+    font-size: 2rem;
+    font-weight: 700;
+    background-color: #EAFC52;
+}
+
+.bc-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: transparent;
+    -webkit-text-stroke: 1px #88888852;
+    padding-top: 20px;
+    text-align: center;
+    margin: 50px auto;
+}
+
+/* Strategy */
+#strategy {
+   
+    color: #EAFC52;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.el-1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.el-2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #0C0B0E;
+    background-color: #FFFFFF;
+    padding: 5px 20px;
+    border-radius: 15px;
+}
+
+.el-3-4 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+
+.vector {
+    width: 5%;
+}
+
+.el-7-8 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #0C0B0E;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: #EAFC52;
+}
+
+/* About-2 */
+.about-2-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.logo-2 img {
+    height: 40vh;
+}
+
+.title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #EAFC52;
+    text-align: right;
+    padding-bottom: 30px;
+}
+
+.description-list {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    gap: 30px;
+    font-size: 1.2rem;
+    color: #C3C3C3;
+}
+
+.contacts {
+    background: #0C0B0E;
+    color: #C3C3C3;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.contacts-title {
+    margin-bottom: 30px;
+}
+
+.contacts-buttons {
+    display: flex;
+    justify-content: center;
+    column-gap: 60px;
+}
+
+.contacts-buttons .btn:hover {
+    transform: scale(1.1);
+}
+
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+
+.modal {
+    display: none;
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); 
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+
+.modal-content {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
