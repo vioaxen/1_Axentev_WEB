@@ -202,6 +202,7 @@ body {
     display: flex;
     justify-content: center;
     column-gap: 60px;
+    padding-bottom: 30px;
 }
 
 .contacts-buttons .btn:hover {

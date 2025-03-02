@@ -1,6 +1,6 @@
-var modal = document.getElementById("modal");
+let modal = document.getElementById("modal");
 
-var span = document.getElementsByClassName("close")[0];
+let span = document.getElementsByClassName("close")[0];
 
 window.onload = function() {
     modal.classList.add("show"); 
