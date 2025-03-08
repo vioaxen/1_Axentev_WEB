@@ -1,0 +1,78 @@
+@media (max-width: 1200px) {
+
+    .title {
+        text-align: center;
+    }
+    .movie {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .movie-review-content {
+        max-width: fit-content;
+    }
+
+    .movie-list-description {
+        justify-content: center;
+    }
+
+    .movie-review-list-genres {
+        justify-content: center;
+    }
+
+    .movie-review-img {
+        text-align: center;
+    }
+
+    .movie-review-img img {
+        margin: 0 auto; 
+    }
+}
+
+@media (max-width: 1040px) {
+    .quotes-list {
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .quotes-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        border-right: none;
+        border-bottom: 1px solid rgb(216, 204, 190, 0.3);
+    }
+
+    .quotes-item:last-child {
+        border-bottom: none;
+    } 
+}
+
+@media (max-width: 900px) {
+    nav {
+        display: none;
+    }
+
+    .header {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 450px) {
+    .left-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px;
+    }
+
+    body {
+        margin-top: 120px;
+    }
+}

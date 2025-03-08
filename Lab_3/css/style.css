@@ -1,0 +1,288 @@
+@import "./reset.css";
+@import "./media.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 60px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+p {
+    font-size: 18px;
+}
+
+.container {
+    max-width: 1430px;
+    padding: 0 60px;
+    margin: 0 auto;
+}
+
+.title {
+    padding-top: 30px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* Header */
+
+.header {
+    background-color:#393E46;
+    color: #EEEEEE;
+    padding: 15px 0;
+    border-bottom: 2px solid rgb(216, 204, 190, 0.3);
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-bar {
+    display: flex;
+    align-items: center;
+    column-gap: 80px;
+}
+
+.game_btn {
+    font-size: 26px;
+    font-weight: 700;
+    color: #393E46;
+    background-color: #d8ccbe;
+    border-radius: 10px;
+    padding: 5px 20px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    will-change: transform;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.game_btn:hover {
+    transform: scale(1.1);
+    background-color: #c0b0a0;
+}
+
+.logo {
+    position: relative;
+    padding: 0 12px 3px 0;
+    font-weight: 700;
+    font-size: 32px;
+    color: #EEEEEE;
+}
+
+.logo::after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #d8ccbe;
+    border-radius: 30%;
+}
+
+/* Navigation */
+
+.nav-list {
+    display: flex;
+    column-gap: 20px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.nav-link {
+    color: #EEEEEE;
+}
+
+.nav-link.active {
+    color: #d8ccbe;
+}
+
+/* Facts section */
+
+#facts-sec {
+    background: #393E46;
+    color: #EEEEEE;
+
+}
+
+.fact-item-title {
+    padding: 20px 0;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.facts-list p {
+    text-align: justify;
+    max-width: 80%;
+}
+
+.facts-list {
+    display: flex;
+    flex-direction: column;
+}
+.fact-item-left, .fact-item-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(216, 204, 190, 0.3);
+}
+
+.fact-item-left:last-child,
+.fact-item-right:last-child {
+    border-bottom: none;
+}
+
+.fact-item-right {
+    align-items: flex-end;
+}
+
+/* Movie review section */
+
+#movie-sec {
+    background: #d8ccbe;
+}
+.movie {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+    color: #393E46;
+    padding-bottom: 30px;
+}
+
+.movie-review-content {
+    max-width: 800px;
+}
+
+.movie-review-description p{
+    font-size: 18px;
+    font-weight: 500;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.movie-list-description {
+    display: flex;
+    justify-content: left;
+    column-gap: 30px;
+    margin: 5px 0 5px 0;
+    color: rgba(57, 62, 70, 0.7);
+}
+
+.movie-review-list-genres {
+    display: flex;
+    justify-content: left;
+    column-gap: 30px;
+    margin: 20px 0 20px 0;
+    color: rgba(57, 62, 70, 0.7);
+}
+
+.movie-review-item-genres {
+    border: 1px solid rgb(57, 62, 70, 0.7);
+    border-radius: 15px;
+    display: inline-block;
+    padding: 10px;
+}
+
+.movie-review-img {
+    margin: 30px 0 10px 0;
+}
+
+.movie-review-img img {
+    border-radius: 5%;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.5);
+    width: 325px;
+}
+
+/* Quotes section */
+
+#quotes-sec {
+    background: #393E46;
+    color: #EEEEEE;
+}
+
+.quotes-list {
+    padding: 30px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.quotes-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+    border-right: 1px solid rgb(216, 204, 190, 0.3);
+}
+
+.quotes-item:last-child {
+    border-right: none;
+}
+
+/* Table */
+#matches {
+    background: #d8ccbe;
+    color: #393E46;
+    padding: 30px 0;
+}
+
+.table-content {
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    border: 1px solid #393E46;
+    padding: 10px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #393E46;
+    color: #EEEEEE;
+}
+
+/* Contacts */
+.contacts {
+    background: #393E46;
+    color: #EEEEEE;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.contacts-title {
+    margin-bottom: 30px;
+}
+
+.contacts-buttons {
+    display: flex;
+    justify-content: center;
+    column-gap: 60px;
+}
+
+.contacts-buttons .btn:hover {
+    transform: scale(1.1);
+}
