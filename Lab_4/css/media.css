@@ -1,0 +1,357 @@
+@media (max-width: 1200px ){
+    header {
+        height: 10vh;
+    }
+    .logo img {
+        height: 10vh;
+    }
+   
+    .nav {
+        display: none;
+    }
+    .header-nav {
+        justify-content: space-between;
+    }
+
+    .container {
+        padding: 0 30px;
+    }
+    .head h2, .head h3, .head h4 {
+        font-size: 1rem;
+    }
+    .buy_btn {
+        font-size: 1rem;
+    }
+    .bc-text {
+        font-size: 1rem;
+    }
+
+
+    .description-list {
+        font-size: 0.8rem;
+    }
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .el-1 {
+        font-size: 1.2rem;
+    }
+
+    .el-2 {
+        font-size: 1rem;
+    }
+
+    .el-7-8 {
+        font-size: 0.9rem;
+    }
+   
+    .title {
+        font-size: 2.5rem;
+        text-align: right;
+    }
+    .description-list {
+        font-size: 1rem;
+        text-align: right;
+       
+    }
+
+    .logo-2 img {
+        height: 40vh;
+    }
+
+    .vector {
+        width: 5%;
+    }
+
+    .contacts {
+        font-size: 1rem;
+    }
+    .feedback-content__main-photo img {
+        height: 20vh;
+        width: 20vh;
+    }
+    .feedback-content__main-name {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 850px ) {
+    header {
+        height: 10vh;
+    }
+
+    .buy {
+        
+    }
+
+    .logo img {
+        height: 10vh;
+    }
+
+    .header-nav {
+        justify-content: center;
+    }
+    .container {
+        padding: 0 15px;
+    }
+
+    .head {
+        text-align: center;
+    }
+
+    .head h2, .head h3, .head h4 {
+        font-size: 0.8rem;
+    }
+    .buy_btn {
+        font-size: 0.8rem;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .el-1 {
+        font-size: 1.2rem;
+    }
+
+    .el-2 {
+        font-size: 0.5rem;
+    }
+
+    .el-7-8 {
+        font-size: 0.5rem;
+    }
+
+
+    .bc-text {
+        font-size: 0.3rem;
+    }
+    .logo-2 img {
+        height: 30vh;
+    }
+    .title {
+        font-size: 2rem;
+        text-align: center;
+    }
+    .description-list {
+        font-size: 0.7rem;
+        text-align: center;
+    }
+    .vector {
+        width: 15%;
+    }
+
+    .contacts {
+        font-size: 0.7rem;
+    }
+
+    .feedback-content__main-photo img {
+        height: 20vh;
+        width: 20vh;
+    }
+    .feedback-content__main-name {
+        font-size: 1.5rem;
+    }
+    .feedback-content__main-rate{
+        font-size: 1.2rem;
+    }
+    .feedback-content__main-review {
+        font-size: 1rem;
+    }
+}
+
+
+
+@media (max-width: 576px ){
+    header {
+        height: 10vh;
+    }
+    .logo img {
+        height: 10vh;
+    }
+   
+    .header {
+        display: flex;
+        flex-direction: column; /* Вертикальное расположение */
+        align-items: center;
+    }
+    /* .buy {
+        display: none;
+    } */
+
+    .buy {
+        gap: 10px
+    }
+    .header-nav {
+        justify-content: center;
+    }
+
+    #about {
+        padding:  0;
+    }
+    .container {
+        padding: 0 10px;
+    }
+    .head h1 {
+        font-size: 1.5rem;
+    }
+    .head h2, .head h3, .head h4 {
+        font-size: 1rem;
+    }
+    .buy_btn {
+        font-size: 1rem;
+    }
+    .bc-text {
+        font-size: 0.8rem;
+    }
+    .logo-2 img {
+        height: 30vh;
+    }
+    .title {
+        font-size: 1.5rem;
+    }
+    .description-list {
+        font-size: 0.8rem;
+    }
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .el-1 {
+        font-size: 1.2rem;
+    }
+
+    .el-2 {
+        font-size: 0.5rem;
+    }
+
+    .el-7-8 {
+        font-size: 0.8rem;
+    }
+
+    .about-2-content {
+        flex-direction: column;
+    }
+    .bc-text {
+        font-size: 0.4rem;
+    }
+    .logo-2 img {
+        height: 40vh;
+        width: 40vh;
+    }
+    .title {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    .description-list {
+        font-size: 0.7rem;
+        text-align: center;
+    }
+
+    .vector {
+        width: 15%;
+    }
+
+    .contacts {
+        font-size: 0.7rem;
+    }
+    .feedback-content__case {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .feedback-content__main-photo img {
+        height: 20vh;
+        width: 20vh;
+    }
+    .feedback-content__main-name {
+        font-size: 1.5rem;
+    }
+    .feedback-content__main-rate{
+        font-size: 1.2rem;
+    }
+    .feedback-content__main-review {
+        font-size: 1rem;
+    }
+
+    #show-review-btn {
+        font-size: 1rem;
+    }
+
+}
+
+@media (max-width: 375px ){
+
+    header {
+        height: 10vh;
+    }
+
+
+
+    .buy-btn {
+        display: none;
+    }
+
+    .logo img {
+        height: 10vh;
+    }
+
+    .header-nav {
+        justify-content: center;
+    }
+    .container {
+        padding: 0 15px;
+    }
+
+    .head {
+        text-align: center;
+    }
+
+    .head h2, .head h3, .head h4 {
+        font-size: 0.8rem;
+    }
+    .buy_btn {
+        font-size: 0.8rem;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .el-1 {
+        font-size: 1.2rem;
+    }
+
+    .el-2 {
+        font-size: 0.5rem;
+    }
+
+    .el-7-8 {
+        font-size: 0.5rem;
+    }
+
+    .about-2-content {
+        flex-direction: column;
+    }
+    .bc-text {
+        font-size: 0.3rem;
+    }
+    .logo-2 img {
+        height: 40vh;
+    }
+    .title {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    .description-list {
+        font-size: 0.7rem;
+        text-align: center;
+    }
+    .vector {
+        width: 15%;
+    }
+
+    .contacts {
+        font-size: 0.7rem;
+    }
+
+}
+
