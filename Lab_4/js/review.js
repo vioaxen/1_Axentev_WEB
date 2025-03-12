@@ -3,7 +3,6 @@ const DEFAULT_AVATAR = "../src/svg/logo.svg";
 let reviews = [
     { author: "Феликс", text: "aboba", rating: 5, photoKey: DEFAULT_AVATAR },
     { author: "Витя Дезинтегратор", text: "Сначала голова-глаза, потом прибыль", rating: 3, photoKey: DEFAULT_AVATAR },
-    { author: "Пися Кислый", text: "Лучше голова-глаза, чем купить это", rating: 1, photoKey: DEFAULT_AVATAR },
     {author: "Криптомагнат Евгений", text: "Я вложился в эту криптомонету и теперь лежу внутри своей яхты", rating: 5, photoKey: DEFAULT_AVATAR}
 ];
 

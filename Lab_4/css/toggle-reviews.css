@@ -100,13 +100,8 @@
     border-radius: 50%;
     height: auto;
     display: block;
-    filter: blur(15px);
+    
 }
-
-.photo-preview.has-photo img {
-    filter: blur(0);
-}
-
 
 .photo-preview::after {
     content: url("../src/svg/add_photo.svg");
