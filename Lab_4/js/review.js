@@ -1,22 +1,23 @@
+const DEFAULT_AVATAR = "../src/svg/logo.svg";
 
 let reviews = [
-    { author: "Феликс", text: "aboba", rating: 5, photoKey: null },
-    { author: "Витя Дезинтегратор", text: "Hui", rating: 3, photoKey: null },
-    { author: "Пися Кислый", text: "kelhrg", rating: 4, photoKey: null }
+    { author: "Феликс", text: "aboba", rating: 5, photoKey: DEFAULT_AVATAR },
+    { author: "Витя Дезинтегратор", text: "Сначала голова-глаза, потом прибыль", rating: 3, photoKey: DEFAULT_AVATAR },
+    { author: "Пися Кислый", text: "Лучше голова-глаза, чем купить это", rating: 1, photoKey: DEFAULT_AVATAR },
+    {author: "Криптомагнат Евгений", text: "Я вложился в эту криптомонету и теперь лежу внутри своей яхты", rating: 5, photoKey: DEFAULT_AVATAR}
 ];
 
 const savedReviews = getCookie('reviews');
 
 if (savedReviews) {
     try {
-      
         const parsedReviews = JSON.parse(savedReviews);
         parsedReviews.forEach((savedReview, index) => {
             const adaptedReview = {
                 author: savedReview.author || `Анонимный_${Date.now()}_${index}`,
                 text: savedReview.text || '',
                 rating: savedReview.rating || 0,
-                photoKey: savedReview.photoKey || null 
+                photoKey: savedReview.photoKey || null
             };
             const exists = reviews.some(review => 
                 review.author === adaptedReview.author && 
@@ -28,31 +29,30 @@ if (savedReviews) {
                 if (adaptedReview.photoKey) {
                     const photo = localStorage.getItem(adaptedReview.photoKey);
                     if (photo) {
-                        reviews[reviews.length - 1].photo = photo; 
+                        reviews[reviews.length - 1].photo = photo;
+                    } else {
+                        reviews[reviews.length - 1].photo = DEFAULT_AVATAR;
                     }
+                } else {
+                    reviews[reviews.length - 1].photo = DEFAULT_AVATAR;
                 }
             } else {
                 console.log("Duplicate review skipped:", adaptedReview);
             }
         });
-        console.log("Final reviews array after loading:", reviews);
+
     } catch (error) {
-        console.error('Ошибка при парсинге cookie:', error);
-        console.log("Invalid cookie content, clearing it:", savedReviews);
         deleteCookie('reviews');
     }
 } else {
-    console.log("No saved reviews found in cookie."); 
+    console.log("No saved reviews found in cookie.");
 }
-
-
-const DEFAULT_AVATAR = "../src/svg/logo.svg"; 
 
 const showReviewsBtn = document.getElementById('show-review-btn');
 const containerReviews = document.getElementById('feedback-add');
 let reviewsDiv = null;
 let isVisible = false;
-let photoPreviewSrc = DEFAULT_AVATAR; 
+let photoPreviewSrc = DEFAULT_AVATAR;
 
 function renderStars(rating) {
     const maxRating = 5;
@@ -64,21 +64,20 @@ function renderStars(rating) {
 }
 
 function getPhotoUrl(photo) {
-    return photo || DEFAULT_AVATAR; 
+    return photo || DEFAULT_AVATAR;
 }
 
 function saveReviewsToCookie() {
     try {
-        
         const reviewsForCookie = reviews.map(review => ({
             author: review.author,
             text: review.text,
             rating: review.rating,
             photoKey: review.photoKey
         }));
-        console.log("Saving reviews to cookie (without photos):", reviewsForCookie); 
+        console.log("Saving reviews to cookie (without photos):", reviewsForCookie);
         setCookie('reviews', JSON.stringify(reviewsForCookie), 30);
-        console.log("Reviews saved, current cookie:", document.cookie); 
+        console.log("Reviews saved, current cookie:", document.cookie);
     } catch (error) {
         console.error('Ошибка при сохранении в cookie:', error);
     }
@@ -87,7 +86,7 @@ function saveReviewsToCookie() {
 function savePhotoToLocalStorage(photoData, key) {
     try {
         localStorage.setItem(key, photoData);
-        console.log("Photo saved to localStorage with key:", key); 
+        console.log("Photo saved to localStorage with key:", key);
     } catch (error) {
         console.error('Ошибка при сохранении фото в localStorage:', error);
     }
@@ -101,7 +100,7 @@ function renderReviews(sortBy = 'rating', filterRating = null) {
     }
 
     let sortedReviews = [...reviews];
-    console.log("Rendering reviews, sortedReviews:", sortedReviews); 
+    console.log("Rendering reviews, sortedReviews:", sortedReviews);
     if (sortBy === 'rating') {
         sortedReviews.sort((a, b) => b.rating - a.rating);
     } else if (sortBy === 'author') {
@@ -135,13 +134,12 @@ function renderReviews(sortBy = 'rating', filterRating = null) {
             ${sortedReviews.map(review => `
                 <div class="review-item">
                     <div class="review-item__left">
-                    <img src="${getPhotoUrl(review.photo)}" alt="${review.author}" class="review-photo">
+                        <img src="${getPhotoUrl(review.photo)}" alt="${review.author}" class="review-photo">
                     </div>
                     <div class="review-item__right">
                         <h3 class="author">${review.author}</h3>
                         <p class="rating">${renderStars(review.rating)}</p>
                         <p class="text">${review.text}</p>
-                        
                     </div>
                 </div>
             `).join('')}
@@ -151,7 +149,6 @@ function renderReviews(sortBy = 'rating', filterRating = null) {
                 <img src="${photoPreviewSrc}" alt="Предпросмотр" class="preview-photo">
                 <input type="file" id="review-photo" accept="image/*" style="display: none;">
             </div>
-
             <div class="review-input">
                 <div class="rating-input" data-rating="0">
                     <span class="star" data-value="1">☆</span>
@@ -162,13 +159,12 @@ function renderReviews(sortBy = 'rating', filterRating = null) {
                 </div>
                 <input type="text" id="review-author" placeholder="Ваше имя" required>
                 <textarea id="review-text" placeholder="Ваш отзыв" required></textarea>
-                 <button type="submit" id="review-btn">Добавить отзыв</button>
+                <button type="submit" id="review-btn">Добавить отзыв</button>
             </div>
         </form>
     `;
-    console.log("Rendered HTML:", reviewsDiv.innerHTML); 
+    console.log("Rendered HTML:", reviewsDiv.innerHTML);
 
-    
     const photoInput = reviewsDiv.querySelector('#review-photo');
     const previewPhoto = reviewsDiv.querySelector('.preview-photo');
     if (photoInput && previewPhoto) {
@@ -180,8 +176,13 @@ function renderReviews(sortBy = 'rating', filterRating = null) {
                 reader.onload = function (event) {
                     photoPreviewSrc = event.target.result;
                     previewPhoto.src = photoPreviewSrc;
+                    previewPhoto.classList.add('has-photo');
                 };
                 reader.readAsDataURL(file);
+            } else {
+                photoPreviewSrc = DEFAULT_AVATAR;
+                previewPhoto.src = photoPreviewSrc;
+                previewPhoto.classList.remove('has-photo');
             }
         });
     }
@@ -245,19 +246,10 @@ function renderReviews(sortBy = 'rating', filterRating = null) {
             author,
             text,
             rating,
-            photoKey: null 
+            photoKey: null
         };
 
-        const reader = new FileReader();
-        reader.onload = function (event) {
-            const photoData = event.target.result;
-            if (photoData) {
-                // Генерируем уникальный ключ для фото
-                const photoKey = `photo_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-                newReview.photoKey = photoKey;
-                savePhotoToLocalStorage(photoData, photoKey); 
-                newReview.photo = photoData; 
-            }
+        const addReview = () => {
             const exists = reviews.some(review => 
                 review.author === newReview.author && 
                 review.text === newReview.text &&
@@ -265,10 +257,10 @@ function renderReviews(sortBy = 'rating', filterRating = null) {
             );
             if (!exists) {
                 reviews.push(newReview);
-                console.log("New review added:", newReview); 
+                
                 saveReviewsToCookie();
             } else {
-                console.log("Duplicate review skipped:", newReview); 
+                
             }
             renderReviews(sortBy, filterRating);
             if (isVisible) {
@@ -277,14 +269,25 @@ function renderReviews(sortBy = 'rating', filterRating = null) {
             reviewForm.reset();
             photoPreviewSrc = DEFAULT_AVATAR;
             previewPhoto.src = photoPreviewSrc;
+            previewPhoto.classList.remove('has-photo');
             ratingInput.setAttribute('data-rating', '0');
             stars.forEach(s => s.textContent = '☆');
         };
 
         if (file) {
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const photoData = event.target.result;
+                const photoKey = `photo_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+                newReview.photoKey = photoKey;
+                savePhotoToLocalStorage(photoData, photoKey);
+                newReview.photo = photoData;
+                addReview();
+            };
             reader.readAsDataURL(file);
         } else {
-            reader.onload();
+            newReview.photo = DEFAULT_AVATAR;
+            addReview();
         }
     });
 
