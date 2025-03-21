@@ -1,0 +1,33 @@
+@use 'sass:math';
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Tektur:wght@400..900&display=swap');
+// Colors
+$color-bg: #1c1c1c;
+$color-text: #fff;
+$color-additional: #cacaca;
+
+// Fonts
+$font-main: 'Montserrat', sans-serif;
+$font-secondary: 'Raleway', sans-serif;
+$font-tertiary: 'Tektur', sans-serif;
+
+// Mixins
+@mixin fluid-text($max: 48, $min: 16) {
+    $maxViewportWidth: 1500;
+    $minViewportWidth: 320;
+
+    $maxSize: math.div($max, 16);
+    $minSize: math.div($min, 16);
+    $maxWidth: math.div($maxViewportWidth, 16);
+    $minWidth: math.div($minViewportWidth, 16);
+
+    $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+    $yAxisIntersection: -$minWidth * $slope + $minSize;
+
+    font-size: clamp(
+        #{$minSize * 1rem},
+        #{$yAxisIntersection * 1rem} + #{$slope * 100vw},
+        #{$maxSize * 1rem}
+    )
+}
+

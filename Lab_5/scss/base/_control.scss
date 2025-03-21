@@ -1,0 +1,63 @@
+#controls {
+    position: relative;
+    width: 100%;
+}
+
+#edit-mode-toggle,
+#save-btn,
+#add-block-btn {
+  background-color: #1a1a1a;
+  color: #cacaca;
+  border: 1px dashed #cacaca;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+#edit-mode-toggle, #save-btn {
+  position: fixed; 
+  right: 20px; 
+  top: 1%; 
+  z-index: 1000;
+}
+
+
+
+#edit-mode-toggle:hover,
+#save-btn:hover,
+#add-block-btn:hover {
+  background-color: #e6b800;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #2a2a2a;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar h3 {
+  margin: 0 0 15px;
+}
+
+.delete-btn {
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.delete-btn:hover {
+  background-color: #cc0000;
+}
+
+.image-upload {
+  margin-top: 10px;
+}
